@@ -1,5 +1,5 @@
 module WinesHelper
 	def formatted_time(time)
-  		time.strftime("%B %d, %Y at %l:%M %p")
+  		time.strftime("%A, %B %d, %Y")
 	end
 end
