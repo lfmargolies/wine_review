@@ -6,4 +6,6 @@
   	<%= link_to(wine.name, wine) %>: <%= wine.year %> <%= wine.varietal %> bottled by <%= wine.winery %>, <%= wine.country %>
   </li>
 <% end %>
+<br>
+<%= link_to 'Add a New Wine', new_wine_path %>
 </ol>
