@@ -12,7 +12,7 @@ class WinesController < ApplicationController
 	def create
 	    @wine = Wine.new(wine_params)
 	    if @wine.save
-	      redirect_to @wine
+	      redirect_to @wine, notice: "#{@wine.name} was added to the list of wines in stock!"
 	    else
 	      render :new
 		end
@@ -28,7 +28,7 @@ class WinesController < ApplicationController
 	end
 	def update
 		@wine.update(wine_params)
-		redirect_to @wine
+		redirect_to @wine, notice: "Database information on #{@wine.name} was updated!"
 	end 
 	def destroy
 		@wine.destroy
