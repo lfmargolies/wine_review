@@ -5,7 +5,7 @@
   padding: 2px 4px;
   background-color: #931717;
   display: table;
-  color: #fff;
+  color: #000;
 }
 #error_explanation {
   width: 375px;
@@ -27,7 +27,7 @@
   }
   ul li {
     font-size: 14px;
-    list-style: s;
+    list-style: disc;
   }
 }
 .flash {
@@ -37,3 +37,4 @@
   font-family: arial;
   padding: 4px 8px;
 }
+
