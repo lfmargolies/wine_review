@@ -2,9 +2,9 @@
 	<%= render 'shared/validation_errors', object: @wine %>
 	<%= f.label :name %> <%= f.text_field :name, autofocus: true %><br />
 	<%= f.label :year %> <%= f.text_field :year %><br />
-	<%= f.select :varietal, Wine: VARIETALS, {prompt: "Pick one"} %> <%= f.text_field :varietal %><br />
+	<%= f.label :varietal %> <%= f.select :varietal, Wine::VARIETALS, {prompt: "Pick one"}, { class: "form-control input-sm" } %><br />
 	<%= f.label :winery %> <%= f.text_field :winery %><br />
 	<%= f.label :country %> <%= f.text_field :country %><br />
-	<p><%= f.submit %></p>
+	<p><button type="submit" class="btn btn-primary">Submit</button></p>
 	<%= link_to 'Cancel', wines_path %>
 <% end %>
