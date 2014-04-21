@@ -9,6 +9,8 @@
   <p><label>Winery:</label> <%= @wine.winery %></p>
   <p><label>Country:</label> <%= @wine.country %></p>
   <p><label>Varietal:</label> <%= @wine.varietal %></p>
+	<p><label>Average Review:</label> <%= format_average_rating(@wine) %></p>
+
 
 </article>
 
@@ -19,3 +21,9 @@
 <%= button_to 'Delete', @wine,
 				method: :delete,
 				data: { confirm: 'Are you sure you want to delete this wine?'} %>
+
+<p>
+  Read all
+  <%= link_to pluralize(@wine.log_entries.size, 'Log Entry'), 
+                        wine_log_entries_path(@wine) %>
+</p>
