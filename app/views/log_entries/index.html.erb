@@ -5,11 +5,11 @@
       <span class="log_entry"><%= pluralize(log_entry.rating, 'rating') %></span>
       <span class="user">by <%= log_entry.name %></span>
       <span class="date">
-        entered <%= time_ago_in_words(log_entry.tasted_on) %> ago
+        Entered <%= time_ago_in_words(log_entry.tasted_on) %> ago
       </span>
       <span class="location">at <%= log_entry.location %> </span>
       <p>
-        <%= log_entry.comments %>
+        &quot;<%= log_entry.comments %>&quot;
       </p>
     </li>
   <% end %>
