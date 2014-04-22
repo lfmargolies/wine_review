@@ -2,23 +2,25 @@
 <ol id="log_entries">
   <% @log_entries.each do |log_entry| %>
     <li>
-      <span class="log_entry"><%= pluralize(log_entry.rating, 'rating') %></span>
-      <span class="user">by <%= log_entry.name %></span>
-      <span class="date">
-        Entered <%= time_ago_in_words(log_entry.tasted_on) %> ago
-      </span>
-      <span class="location">at <%= log_entry.location %> </span>
-      <p>
         &quot;<%= log_entry.comments %>&quot;
-      </p>
+        <br>
+        <span class="user">Written by <%= log_entry.name %></span>
+      <span class="date">
+        <%= time_ago_in_words(log_entry.created_at) %> ago.
+      </span>
+      <br>
+      <span class="location">Tasted at <%= log_entry.location %>.</span>
+      <br>
+      <span class="ratings">Rating: <%= log_entry.rating %> grapes out of 5.</span>
+      <br><br>
     </li>
   <% end %>
 </ol>
-<br>
+
 
 <%= link_to 'Enter a Log Entry', new_wine_log_entry_path(@wine),
         remote: true,
         data: { 'update-target' => 'log_entry_form_container' },
         class: 'btn btn-primary' %>
-
+<br><br>
 <div id="log_entry_form_container"></div>
