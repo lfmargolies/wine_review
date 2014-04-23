@@ -9,7 +9,8 @@
         <%= time_ago_in_words(log_entry.created_at) %> ago.
       </span>
       <br>
-      <span class="location">Tasted at <%= log_entry.location %>.</span>
+      <span class="location">Tasted in <%= log_entry.location %> about <%= time_ago_in_words(log_entry.tasted_on) %> ago.</span>
+
       <br>
       <span class="ratings">Rating: <%= log_entry.rating %> grapes out of 5.</span>
       <br><br>
