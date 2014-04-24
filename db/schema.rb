@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(version: 20140418211833) do
     t.datetime "updated_at"
   end
 
-  add_index "log_entries", ["wine_id"], name: "index_log_entries_on_wine_id"
-
   create_table "wines", force: true do |t|
     t.string   "name"
     t.integer  "year"
@@ -35,5 +33,7 @@ ActiveRecord::Schema.define(version: 20140418211833) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "log_entries", ["wine_id"], name: "index_log_entries_on_wine_id"
 
 end
